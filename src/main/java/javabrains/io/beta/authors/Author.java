@@ -10,12 +10,12 @@ import org.springframework.data.cassandra.core.mapping.Table;
 
 @Table(value = "author_by_id")
 public class Author {
-	@Id @PrimaryKeyColumn(name = "author_name", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
+	@Id @PrimaryKeyColumn(name = "id", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
 	public String id;
 	@Column("author_name")
 	@CassandraType(type = Name.TEXT)
 	public String name;
-	@Column("author_pen_name")
+	@Column("parentname")
 	public String parentName;
 
 	public String getId() {
